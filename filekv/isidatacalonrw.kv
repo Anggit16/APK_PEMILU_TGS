@@ -1,0 +1,96 @@
+#:kivy 2.3.0
+# Menuuu Isi Data Calonnnn RTTT
+<TestCalonrw>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'tambahcln'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Calon RW"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 403
+            pos_hint: {'center_x':.5, 'center_y':.6}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+            TextInput:
+                hint_text: "Nama"
+                height: 30
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                background_normal:''
+                background_color: 1, 1, 1, 1
+            TextInput:
+                hint_text: "Visi Misi"
+                height: 100
+                size_hint_y: None
+                multiline: False
+                pos_hint: {'center_x':.5, 'center_y':.5}
+                font_size: 15
+                background_normal:''
+                background_color: 1, 1, 1, 1,
+            BoxLayout:
+                orientation: "horizontal"
+                TextInput:
+                    id: Upload File
+                    hint_text: "Upload File"
+                    height: 30
+                    width: 200
+                    size_hint: None, None
+                    multiline: False
+                    font_size: 15
+                    background_normal:''
+                    background_color: 1, 1, 1, 1
+                # Widr6ld7tfugiyget:
+                #     width_hint: 0.4
+                Button:
+                    text: "Browser"
+                    color: 0, 0, 0, 1
+                    size_hint: None, None
+                    height: 25
+                    width: 86
+                    background_normal: ''
+                    background_color: "#D9D9D9"
+                    padding: 10
+                    spacing: 50 
+            Widget:
+                size_hint_x: 0.01        
+        Button:
+            text: "Simpan"
+            size_hint: None, None
+            height: 43
+            width: 136
+            background_color: 0, 0, 0, 0
+            pos_hint: {'center_x':.5, 'center_y':.35}
+            canvas.before:
+                Color:
+                    rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]  # Radius lengkungan tombol (ubah sesuai kebutuhan)

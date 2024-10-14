@@ -1,0 +1,72 @@
+#:kivy 2.3.0
+
+# Menu Loginn
+<TestLogin>:
+    Screen:
+        Image:
+            source: "asset/gambarlogin.png"
+            size_hint: None, None
+            width:"256dp"
+            height:"232dp"
+            pos_hint: {'center_x':.5, 'center_y':.6}
+        Label:
+            text:"Login"
+            font_size:"48dp"
+            halign:"center"
+            pos_hint: {'center_y':.8}
+            color:"#8366DD"
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: 0.8, 0.4
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            padding: 10
+            spacing: 10
+            TextInput:
+                id: username_input
+                hint_text: "Username"
+                height: 40
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                padding: [10, 10]
+                background_normal:''
+                background_color: "#D2BBFF"
+            TextInput:
+                id: password_input
+                hint_text: "Password"
+                height: 40
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                padding: [10, 10]
+                background_normal:''
+                background_color: "#D2BBFF"        
+        Button:
+            text: "Login"
+            size_hint: None, None
+            height: 52
+            width: 217
+            background_normal: ''
+            background_color: 0, 0, 0, 0
+            padding_x: 50
+            pos_hint: {'center_x':.5, 'center_y':.2}
+            canvas.before:
+                Color:
+                    rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [25]  # Radius lengkungan tombol (ubah sesuai kebutuhan)
+            on_press: root.do_login()
+
+
+
+            
+
+            
+                
+
+
+            
+
+           
