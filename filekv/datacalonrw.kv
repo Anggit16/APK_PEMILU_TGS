@@ -1,0 +1,107 @@
+#:kivy 2.3.0
+<TestDatarw>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'menu'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Calon RW"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        Button:
+            size_hint: None, None
+            size: 376, 150
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            background_color: 0, 0, 0, 0
+            on_press:
+                app.root.current = 'calonrw1'
+            canvas:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        Image:
+            source: 'asset/manager.png' 
+            size_hint: None, None
+            width: 110
+            height: 110
+            pos_hint: {'center_x': 0.2, 'center_y': 0.7}
+        Label:
+            text:"Calon 1"
+            font_size:"24dp"
+            halign:"center"
+            pos_hint: {'center_y':.70, 'center_x': 0.6}
+        Button:
+            size_hint: None, None
+            size: 376, 150
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            background_color: 0, 0, 0, 0
+            on_press:
+                app.root.current = 'calonrw1'
+            canvas:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        Image:
+            source: 'asset/manager.png' 
+            size_hint: None, None
+            width: 110
+            height: 110
+            pos_hint: {'center_x': 0.2, 'center_y': 0.5}
+        Label:
+            text:"Calon 2"
+            font_size:"24dp"
+            halign:"center"
+            pos_hint: {'center_y':.50, 'center_x': 0.6}
+        Button:
+            size_hint: None, None
+            size: 376, 150
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            background_color: 0, 0, 0, 0
+            on_press:
+                app.root.current = 'calonrw1'
+            canvas:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        Image:
+            source: 'asset/manager.png' 
+            size_hint: None, None
+            width: 110
+            height: 110
+            pos_hint: {'center_x': 0.2, 'center_y': 0.3}
+        Label:
+            text:"Calon 3"
+            font_size:"24dp"
+            halign:"center"
+            pos_hint: {'center_y':.30, 'center_x': 0.6}
+      
+

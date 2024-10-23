@@ -20,7 +20,7 @@ class TestMenu(Screen):
 
         # Mengatur aksi tombol
         yes_button.bind(on_press=self.logout)
-        no_button.bind(on_press=lambda *args: popup.dismiss())
+        no_button.bind(on_press=self.logoutNo)
 
         # Menambahkan tombol ke layout
         button_layout.add_widget(yes_button)
@@ -43,4 +43,7 @@ class TestMenu(Screen):
 
         # Mengalihkan layar kembali ke halaman login
         App.get_running_app().root.current = 'login'  # Pastikan ID layar login adalah 'login_screen'
-    pass
+
+    def logoutNo(self,instance):
+        # Menutup popup
+        self.popup.dismiss()        

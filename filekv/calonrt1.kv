@@ -1,0 +1,64 @@
+#:kivy 2.3.0
+<TestCalonrt1>
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'datart'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Calon RT"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        Image:
+            source: 'asset/manager.png' 
+            size_hint: None, None
+            width: 110
+            height: 110
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 80
+            pos_hint: {'center_x':.5, 'center_y':.65}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 200
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            spacing: 26
+            padding: 10, 50, 10, 10
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Warna latar belakang putih untuk BoxLayout
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20, 20, 20, 20]  # Radius untuk sudut melengkung
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1  # Warna hitam untuk border
+                Line:
+                    rounded_rectangle: (self.x, self.y, self.width, self.height, 20, 20, 20, 20)  # Border dengan radius
+                    width: 1  # Ketebalan border
