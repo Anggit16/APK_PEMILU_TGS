@@ -29,7 +29,7 @@ class MyApp(App):
         smanager.add_widget(TestCalon(name='tambahcln'))
         smanager.add_widget(TestCalonrt(name='dataclnrt'))
         smanager.add_widget(TestCalonrw(name='dataclnrw'))
-        smanager.current = 'menu' #untuk menjadikan halaman tampil pertama
+        smanager.current = 'login' #untuk menjadikan halaman tampil pertama
         return smanager
 if __name__ == '__main__':
     MyApp().run()
