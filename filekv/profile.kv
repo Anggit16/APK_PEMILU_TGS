@@ -1,0 +1,94 @@
+#:kivy 2.3.0
+<Profile>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'dashboard'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Profile"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: None, None
+            width: 360  # Lebar tetap untuk setiap garis
+            height: 100  # Total tinggi yang mencakup semua garis dan jarak antar garis
+            pos_hint: {'center_x': .5, 'center_y': .45}
+            spacing: 40  # Jarak antar garis
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                spacing: 10  # Mengatur jarak antara Label dan Garis
+                Label:
+                    text: "Nama: Hardiyantod"
+                    font_size: "15dp"
+                    color: "#000000"
+                    halign: "left"
+                    size_hint_y: None
+                    height: 20  # Tinggi label
+                    pos_hint: {'x': -0.26}  # Mengatur posisi label ke kiri
+                Widget:
+                    size_hint_y: None
+                    height: 3
+                    canvas.before:
+                        Color:
+                            rgba: (0.514, 0.4, 0.867, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                spacing: 10  # Mengatur jarak antara Label dan Garis
+                Label:
+                    text: "NIK: 20092003"
+                    font_size: "15dp"
+                    color: "#000000"
+                    halign: "left"
+                    size_hint_y: None
+                    height: 20  # Tinggi label
+                    pos_hint: {'x': -0.3}
+                Widget:
+                    size_hint_y: None
+                    height: 3
+                    canvas.before:
+                        Color:
+                            rgba: (0.514, 0.4, 0.867, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                spacing: 10  # Mengatur jarak antara Label dan Garis
+                Label:
+                    text: "Password: tod12345"
+                    font_size: "15dp"
+                    color: "#000000"
+                    halign: "left"
+                    size_hint_y: None
+                    height: 20  # Tinggi label
+                    pos_hint: {'x': -0.25}
+                Widget:
+                    size_hint_y: None
+                    height: 3
+                    canvas.before:
+                        Color:
+                            rgba: (0.514, 0.4, 0.867, 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos

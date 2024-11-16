@@ -1,0 +1,64 @@
+#:kivy 2.3.0
+<HasilAd>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'menu'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Hasil"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: 0.5, 0.4
+            pos_hint: {'center_x':.5, 'center_y':.78}
+            padding: 10
+            spacing: 26
+            Button:
+                text: "Hasil RW"
+                size_hint: None, None
+                height: 59
+                width: 313
+                background_normal: ''
+                background_color: 0, 0, 0, 0
+                pos_hint: {'center_x':.5, 'center_y':.5}
+                on_press:
+                    app.root.current = 'hasilrwad'
+                canvas.before:
+                    Color:
+                        rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]  # Radius lengkungan tombol (ubah sesuai kebutuhan)
+            Button:
+                text: "Hasil RT"
+                size_hint: None, None
+                height: 59
+                width: 313
+                background_normal: ''
+                background_color: 0, 0, 0, 0
+                pos_hint: {'center_x':.5, 'center_y':.5}
+                on_press:
+                    app.root.current = 'hasilrtad'
+                canvas.before:
+                    Color:
+                        rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [30]  # Radius lengkungan tombol (ubah sesuai kebutuhan)

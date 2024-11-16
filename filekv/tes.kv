@@ -1,0 +1,245 @@
+#:kivy 2.3.0
+<ProductList>:
+    container: container
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            size_hint: 1, 0.2
+
+            Button:
+                size_hint: None, None
+                height: 40
+                width: 40
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                # padding_x: 50
+                # pos_hint: {'center_x':.1, 'center_y':.9}
+                on_press:
+                    app.root.current = 'menu'
+                Image:
+                    source: 'asset/back.png'
+                    size_hint: None, None
+                    size: self.parent.width * 1.0, self.parent.height * 1.0
+                    pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        
+            Label:
+                text:"Data Penduduk"
+                font_size:"32dp"
+                halign:"center"
+                # pos_hint: {'center_y':.87}
+                color:"#8366DD"
+        
+        ScrollView:
+            GridLayout:
+                id: container
+                cols: 1
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+        
+        Button:
+            text: 'Tambah Penduduk'
+            size_hint_y: None
+            height: 50
+            on_press: root.show_add_product()
+
+<AddProduct>:
+    name_input: name_input
+    nik_input: nik_input
+    pw_input: pw_input
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            size_hint: 1, 0.1
+
+            Button:
+                size_hint: None, None
+                height: 40
+                width: 40
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                # padding_x: 50
+                # pos_hint: {'center_x':.1, 'center_y':.9}
+                on_press:
+                    app.root.current = 'product_list'
+                Image:
+                    source: 'asset/back.png'
+                    size_hint: None, None
+                    size: self.parent.width * 1.0, self.parent.height * 1.0
+                    pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        
+            Label:
+                text:"Tambah Penduduk"
+                font_size:"32dp"
+                halign:"center"
+                # pos_hint: {'center_y':.87}
+                color:"#8366DD"
+        
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 403
+            pos_hint: {'center_x':.5}
+            spacing: 35
+            padding: 10, 50, 10, 10
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        
+            TextInput:
+                id: name_input
+                hint_text: 'Nama'
+                size_hint_y: None
+                height: 40
+                multiline: False
+            
+            TextInput:
+                id: nik_input
+                hint_text: 'NIK'
+                size_hint_y: None
+                height: 40
+                multiline: False
+                input_filter: 'int'
+            
+            TextInput:
+                id: pw_input
+                hint_text: 'password'
+                size_hint_y: None
+                height: 40
+                multiline: False
+            
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                spacing: 10
+                
+                Button:
+                    text: 'Batal'
+                    on_press: root.cancel()
+                
+                Button:
+                    text: 'Tambah'
+                    on_press: root.add_product()
+            
+            Widget:
+                size_hint_x: 0.01
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            size_hint: 1, 0.2
+
+<EditProduct>:
+    name_input: name_input
+    nik_input: nik_input
+    pw_input: pw_input
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            size_hint: 1, 0.1
+
+            Button:
+                size_hint: None, None
+                height: 40
+                width: 40
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                # padding_x: 50
+                # pos_hint: {'center_x':.1, 'center_y':.9}
+                on_press:
+                    app.root.current = 'product_list'
+                Image:
+                    source: 'asset/back.png'
+                    size_hint: None, None
+                    size: self.parent.width * 1.0, self.parent.height * 1.0
+                    pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+
+            Label:
+                text:"Tambah Penduduk"
+                font_size:"32dp"
+                halign:"center"
+                # pos_hint: {'center_y':.87}
+                color:"#8366DD"
+        
+            # Label:
+            #     text: 'Edit '
+            #     size_hint_y: None
+            #     height: 50
+            #     font_size: 24
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 403
+            pos_hint: {'center_x':.5}
+            spacing: 35
+            padding: 10, 50, 10, 10
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+        
+            TextInput:
+                id: name_input
+                hint_text: 'Nama Anggota'
+                size_hint_y: None
+                height: 40
+                multiline: False
+            
+            TextInput:
+                id: nik_input
+                hint_text: 'NIK'
+                size_hint_y: None
+                height: 40
+                multiline: False
+                input_filter: 'int'
+            
+            TextInput:
+                id: pw_input
+                hint_text: 'password'
+                size_hint_y: None
+                height: 40
+                multiline: False
+            
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                spacing: 10
+                
+                Button:
+                    text: 'Batal'
+                    on_press: root.cancel()
+                
+                Button:
+                    text: 'Update'
+                    on_press: root.update_product()
+            Widget:
+                size_hint_x: 0.01
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            size_hint: 1, 0.2
+        

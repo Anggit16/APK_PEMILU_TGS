@@ -1,0 +1,143 @@
+#:kivy 2.3.0
+# Menuuu Isi Data Calonnnn RTTT
+<PemilihanRt>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'dashboard'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Pemilihan RT"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint: None, None
+            size: 376, 201
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            spacing: 26
+            # padding: 10, 50, 10, 10  
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+            BoxLayout:
+                orientation: 'vertical'  # Menyusun gambar dan Label1 secara vertikal
+                size_hint_x: None
+                width: 150
+                padding: 10, 40
+                Image:
+                    source: 'asset/manager.png'
+                    size_hint: None, None
+                    size: 100, 100  # Ukuran gambar
+                    pos_hint: {'center_x':.5}  
+                Label:
+                    text: "Parmin"
+                    font_size: 15
+                    color: "#000000"
+                    halign: "center"
+                    valign: "middle"
+                    size_hint_y: None
+                    height: 20  # Tinggi label
+                    text_size: self.size
+                    
+            Widget:
+                size_hint_x: 0.01 
+            Label:
+                text: "VisiMisi: Mensejahterakan penduduk"
+                font_size: 15
+                color: "#000000"
+                halign: "left"  # Menyelaraskan teks ke kiri
+                valign: "middle"
+                text_size: self.size  # Membuat teks mengikuti ukuran label
+                size_hint: 1, 1 
+        Button:
+            text: "Pilih"
+            size_hint: None, None
+            height: 43
+            width: 136
+            background_color: 0, 0, 0, 0
+            pos_hint: {'center_x':.5, 'center_y':.55}
+            canvas.before:
+                Color:
+                    rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]  # Radius lengkungan tombol (ubah sesuai kebutuhan) 
+            on_press: root.next_page()
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint: None, None
+            size: 376, 201
+            pos_hint: {'center_x':.5, 'center_y':.35}
+            spacing: 26
+            # padding: 10, 50, 10, 10  
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+            BoxLayout:
+                orientation: 'vertical'  # Menyusun gambar dan Label1 secara vertikal
+                size_hint_x: None
+                width: 150
+                padding: 10, 40
+                Image:
+                    source: 'asset/manager.png'
+                    size_hint: None, None
+                    size: 100, 100  # Ukuran gambar
+                    pos_hint: {'center_x':.5}
+                    
+                Label:
+                    text: "Bobby"
+                    font_size: 15
+                    color: "#000000"
+                    halign: "center"
+                    valign: "middle"
+                    size_hint_y: None
+                    height: 20  # Tinggi label
+                    text_size: self.size
+            Widget:
+                size_hint_x: 0.01 
+            Label:
+                text: "VisiMisi: Memajukan Desa"
+                font_size: 15
+                color: "#000000"
+                halign: "left"  # Menyelaraskan teks ke kiri
+                valign: "middle"
+                text_size: self.size  # Membuat teks mengikuti ukuran label
+                size_hint: 1, 1  
+        Button:
+            text: "Pilih"
+            size_hint: None, None
+            height: 43
+            width: 136
+            background_color: 0, 0, 0, 0
+            pos_hint: {'center_x':.5, 'center_y':.2}
+            canvas.before:
+                Color:
+                    rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]  # Radius lengkungan tombol (ubah sesuai kebutuhan)
+            on_press: root.next_page()

@@ -1,5 +1,5 @@
 #:kivy 2.3.0
-<TestMenu>:
+<TestDashboard>:
     BoxLayout:
         orientation: 'vertical'
         # padding: 10
@@ -23,7 +23,7 @@
                     size: self.parent.width * 1.0, self.parent.height * 1.0
                     pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
             Label:
-                text:"Beranda"
+                text:"Dashboard"
                 font_size: "40dp"
                 halign:"center"
                 # pos_hint: {'center_y':.87}
@@ -50,8 +50,7 @@
                     # padding_x: 50
                     # pos_hint: {'center_x':.5, 'center_y':.8}
                     on_press: 
-                        app.root.current = 'dataclnrw'
-
+                        app.root.current = 'pemilihanrw'
                     BoxLayout:
                         orientation: 'vertical'  # Mengatur orientasi menjadi vertikal
                         size_hint: None, None
@@ -63,7 +62,7 @@
                             height: 80
                             pos_hint: {'center_x': .5}  # Pusatkan gambar secara horizontal
                         Label:
-                            text: "Data Calon RW"
+                            text: "Pemilihan RW"
                             font_size: "12dp"
                             halign: "center"
                             color: "#000000"
@@ -71,17 +70,17 @@
                             height: 30  # Tinggi Label
                             valign: 'middle'  # Pusatkan teks vertikal
                             text_size: self.size  # Mengatur teks agar sesuai dengan ukuran Label
-                    
+                
                 Button:
                     size_hint: 0.5, None
                     height: 200
                     # width: 133
                     background_normal: ''
                     background_color: "#D2BBFF"
-                    padding_x: 50
-                    # +
+                    # padding_x: 50
+                    # pos_hint: {'center_x':.5, 'center_y':.8}
                     on_press: 
-                        app.root.current = 'dataclnrt'
+                        app.root.current = 'pemilihanrt'
                     BoxLayout:
                         orientation: 'vertical'  # Mengatur orientasi menjadi vertikal
                         size_hint: None, None
@@ -93,7 +92,7 @@
                             height: 80
                             pos_hint: {'center_x': .5}  # Pusatkan gambar secara horizontal
                         Label:
-                            text: "Data Calon RT"
+                            text: "Pemilihan RT"
                             font_size: "12dp"
                             halign: "center"
                             color: "#000000"
@@ -111,7 +110,7 @@
                     # padding_x: 50
                     # pos_hint: {'center_x':.5, 'center_y':.5}
                     on_press: 
-                        app.root.current = 'hasilad'
+                        app.root.current = 'hasil'
                     BoxLayout:
                         orientation: 'vertical'  # Mengatur orientasi menjadi vertikal
                         size_hint: None, None
@@ -139,20 +138,20 @@
                     background_color: "#D2BBFF"
                     # padding_x: 50
                     # pos_hint: {'center_x':.5, 'center_y':.5}
-                    on_press:
-                        app.root.current = 'product_list'
+                    on_press: 
+                        app.root.current = 'profile'
                     BoxLayout:
                         orientation: 'vertical'  # Mengatur orientasi menjadi vertikal
                         size_hint: None, None
                         pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
                         Image:
-                            source: 'asset/dokumen.png'
+                            source: 'asset/profile-user.png'
                             size_hint: None, None
                             width: 80
                             height: 80
                             pos_hint: {'center_x': .5}  # Pusatkan gambar secara horizontal
                         Label:
-                            text: "Data Penduduk"
+                            text: "Profile"
                             font_size: "12dp"
                             halign: "center"
                             color: "#000000"
@@ -164,33 +163,3 @@
             BoxLayout:
                 orientation: 'vertical'
                 size_hint: 1, 0.2
-
-        # Button:
-        #     size_hint: None, None
-        #     height: 148
-        #     width: 133
-        #     background_normal: ''
-        #     background_color: "#D2BBFF"
-        #     padding_x: 50
-        #     pos_hint: {'center_x':.5, 'center_y':.3}
-        #     on_press:
-        #         app.root.current = 'tambahcln'
-        #     BoxLayout:
-        #         orientation: 'vertical'  # Mengatur orientasi menjadi vertikal
-        #         size_hint: None, None
-        #         pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
-        #         Image:
-        #             source: 'asset/manager.png'
-        #             size_hint: None, None
-        #             width: 80
-        #             height: 80
-        #             pos_hint: {'center_x': .5}  # Pusatkan gambar secara horizontal
-        #         Label:
-        #             text: "Tambah Data Calon"
-        #             font_size: "12dp"
-        #             halign: "center"
-        #             color: "#000000"
-        #             size_hint_y: None  # Ukuran Y diatur manual
-        #             height: 30  # Tinggi Label
-        #             valign: 'middle'  # Pusatkan teks vertikal
-        #             text_size: self.size  # Mengatur teks agar sesuai dengan ukuran Label

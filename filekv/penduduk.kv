@@ -1,0 +1,74 @@
+#:kivy 2.3.0
+<Penduduk>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'datapenduduk'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Penduduk"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        # BoxLayout:
+        #     orientation:'vertical'
+        #     spacing: 26
+        #     padding: 3, 50, 20, 10
+        #     size_hint: None, None  # Menetapkan ukuran khusus agar bisa menggunakan pos_hint
+        #     size: 370, 500  # Ukuran khusus untuk BoxLayout
+        #     pos_hint: {'center_x': .5, 'center_y': .5}  # Menyelaraskan BoxLayout ke tengah
+        #     BoxLayout:
+        #         orientation: 'vertical'
+        #         size_hint: None, None
+        #         size: 376, 150
+        #         background_color: 0, 0, 0, 0
+        #         # on_press:
+        #         #     app.root.current = 'calonrt1'
+        #         canvas:
+        #             Color:
+        #                 rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+        #             RoundedRectangle:
+        #                 pos: self.pos
+        #                 size: self.size
+        #                 radius: [30]
+        #     BoxLayout:
+        #         orientation: 'vertical'
+        #         size_hint: None, None
+        #         size: 376, 150
+        #         background_color: 0, 0, 0, 0
+        #         # on_press:
+        #         #     app.root.current = 'calonrt1'
+        #         canvas:
+        #             Color:
+        #                 rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+        #             RoundedRectangle:
+        #                 pos: self.pos
+        #                 size: self.size
+        #                 radius: [30]
+        #     BoxLayout:
+        #         orientation: 'vertical'
+        #         size_hint: None, None
+        #         size: 376, 150
+        #         background_color: 0, 0, 0, 0
+        #         # on_press:
+        #         #     app.root.current = 'calonrt1'
+        #         canvas:
+        #             Color:
+        #                 rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+        #             RoundedRectangle:
+        #                 pos: self.pos
+        #                 size: self.size
+        #                 radius: [30]
+      

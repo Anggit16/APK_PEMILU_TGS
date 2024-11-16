@@ -1,0 +1,126 @@
+#:kivy 2.3.0
+<Hasil>:
+    Screen:
+        Button:
+            size_hint: None, None
+            height: 40
+            width: 40
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            padding_x: 50
+            pos_hint: {'center_x':.1, 'center_y':.9}
+            on_press:
+                app.root.current = 'hasil'
+            Image:
+                source: 'asset/back.png'
+                size_hint: None, None
+                size: self.parent.width * 1.0, self.parent.height * 1.0
+                pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+        Label:
+            text:"Hasil RT"
+            font_size:"32dp"
+            halign:"center"
+            pos_hint: {'center_y':.87}
+            color:"#8366DD"
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 403
+            pos_hint: {'center_x':.5, 'center_y':.6}
+            spacing: 10
+            padding: 20, 50, 20, 10
+            canvas.before:
+                Color:
+                    rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 0, 20
+                Label:
+                    text: "Nama Paslon"
+                    color:"#000000"
+                    font_size: 15
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size  # Menyesuaikan ukuran teks dengan ukuran label
+                TextInput:
+                    hint_text: "0%"
+                    height: 30
+                    size_hint_y: None
+                    multiline: False
+                    font_size: 15
+                    background_normal:''
+                    background_color: 1, 1, 1, 1
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 0, 20,
+                Label:
+                    text: "Nama Paslon"
+                    color:"#000000"
+                    font_size: 15
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size  # Menyesuaikan ukuran teks dengan ukuran label
+                TextInput:
+                    hint_text: "0%"
+                    height: 30
+                    size_hint_y: None
+                    multiline: False
+                    font_size: 15
+                    background_normal:''
+                    background_color: 1, 1, 1, 1
+            Widget:
+                size_hint_x: 0.01
+        BoxLayout:
+            orientation:'vertical'
+            size_hint: None, None
+            size: 376, 201
+            pos_hint: {'center_x':.5, 'center_y':.25}
+            spacing: 10
+            padding: 0, 0, 0, 30  
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1 
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]
+                # Border settings
+                Color:
+                    rgba: 0.514, 0.4, 0.867, 1
+                Line:
+                    rounded_rectangle: (self.x, self.y, self.width, self.height, 30)  # Border outline with rounded corners
+                    width: 2  # Set the thickness of the border line
+            Label:
+                text: "Perhatian"
+                color: "#000000"  # Warna teks hitam
+                font_size: '15dp'
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.width, None  # Lebar sesuai dengan lebar label, tinggi otomatis
+                size_hint_y: None
+                height: self.texture_size[1] + 10  # Tinggi sesuai dengan ukuran teks + padding
+            Label:
+                text: "1. Hasil pemilihan bersifat final dan tidak dapat diganggu gugat. Panitia telah melakukan perhitungan suara secara transparan."
+                color: "#000000"  # Warna teks hitam
+                font_size: '12dp'
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.width, None  # Lebar sesuai dengan lebar label, tinggi otomatis
+                size_hint_y: None
+                height: self.texture_size[1] + 10  # Tinggi sesuai dengan ukuran teks + padding
+                pos_hint: {'x': 0.02}
+
+
+            Label:
+                text: "2. Pengurus terpilih harus mengikuti pelantikan dalam waktu 1 minggu setelah hasil diumumkan."
+                color: "#000000"
+                font_size: '12dp'
+                valign: 'middle'
+                text_size: self.width, None  # Lebar sesuai dengan lebar label, tinggi otomatis
+                size_hint_y: None
+                height: self.texture_size[1] + 10  # Tinggi sesuai dengan ukuran teks + padding
+                pos_hint: {'x': 0.02}

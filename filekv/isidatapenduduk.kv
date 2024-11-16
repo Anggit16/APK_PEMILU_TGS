@@ -1,0 +1,232 @@
+#:kivy 2.3.0
+#:kivy 2.3.0
+<Penduduk>:
+    Button:
+        size_hint: None, None
+        height: 40
+        width: 40
+        background_normal: ''
+        background_color: 1, 1, 1, 1
+        padding_x: 50
+        pos_hint: {'center_x':.1, 'center_y':.9}
+        on_press:
+            app.root.current = 'menu'
+        Image:
+            source: 'asset/back.png'
+            size_hint: None, None
+            size: self.parent.width * 1.0, self.parent.height * 1.0
+            pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+    Label:
+        text:"Penduduk"
+        font_size:"32dp"
+        halign:"center"
+        pos_hint: {'center_y':.87}
+        color:"#8366DD"
+
+    Button:
+        size_hint: None, None
+        halign:"center"
+        pos_hint: {'center_y':.80, 'center_x':.5}
+        size: 376, 50
+        background_color: 0, 0, 0, 0
+        on_press:
+            app.root.current = 'isidatapenduduk'
+        canvas:
+            Color:
+                rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+        
+        Label:
+            size_hint: None, None
+            size: self.parent.width * 1.0, self.parent.height * 1.0
+            pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+            text: 'Tambah Penduduk'
+            color: 0, 0, 0, 1
+            font_size: 20  # Sesuaikan ukuran font jika perlu
+    ScrollView:
+        size_hint: 1, 0.9
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            pos_hint: {'center_y':.70, 'center_x':.5}
+            
+            # size_hint: None, None
+            # size: self.parent.width * 0.2, self.parent.height * 0,9
+            # pos: self.parent.center_x - self.width / 2, self.parent.y
+        # BoxLayout:
+        #     orientation:'vertical'
+        #     spacing: 26
+        #     padding: 3, 50, 20, 10
+        #     size_hint: None, None  # Menetapkan ukuran khusus agar bisa menggunakan pos_hint
+        #     size: 370, 500  # Ukuran khusus untuk BoxLayout
+        #     pos_hint: {'center_x': .5, 'center_y': .5}  # Menyelaraskan BoxLayout ke tengah
+            # BoxLayout:
+            #     orientation: 'vertical'
+            #     size_hint: None, None
+            #     size: 376, 150
+            #     background_color: 0, 0, 0, 0
+            #     # on_press:
+            #     #     app.root.current = 'calonrt1'
+            #     canvas:
+            #         Color:
+            #             rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+            #         RoundedRectangle:
+            #             pos: self.pos
+            #             size: self.size
+            #             radius: [30]
+        #     BoxLayout:
+        #         orientation: 'vertical'
+        #         size_hint: None, None
+        #         size: 376, 150
+        #         background_color: 0, 0, 0, 0
+        #         # on_press:
+        #         #     app.root.current = 'calonrt1'
+        #         canvas:
+        #             Color:
+        #                 rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+        #             RoundedRectangle:
+        #                 pos: self.pos
+        #                 size: self.size
+        #                 radius: [30]
+        #     BoxLayout:
+        #         orientation: 'vertical'
+        #         size_hint: None, None
+        #         size: 376, 150
+        #         background_color: 0, 0, 0, 0
+        #         # on_press:
+        #         #     app.root.current = 'calonrt1'
+        #         canvas:
+        #             Color:
+        #                 rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+        #             RoundedRectangle:
+        #                 pos: self.pos
+        #                 size: self.size
+        #                 radius: [30]
+      
+<IsiDataPenduduk>:
+    Button:
+        size_hint: None, None
+        height: 40
+        width: 40
+        background_normal: ''
+        background_color: 1, 1, 1, 1
+        padding_x: 50
+        pos_hint: {'center_x':.1, 'center_y':.9}
+        on_press:
+            app.root.current = 'penduduk'
+        Image:
+            source: 'asset/back.png'
+            size_hint: None, None
+            size: self.parent.width * 1.0, self.parent.height * 1.0
+            pos: self.parent.center_x - self.width / 2, self.parent.center_y - self.height / 2
+    Label:
+        text:"Data Penduduk"
+        font_size:"32dp"
+        halign:"center"
+        pos_hint: {'center_y':.87}
+        color:"#8366DD"  # Ini akan mengambil ruang tersisa dan membantu memposisikan label
+
+
+        # Container untuk input data penduduk
+    BoxLayout:
+        orientation:'vertical'
+        size_hint: 0.1, 0.3
+        # size: 376, 403
+        # pos_hint: {'center_x':.5, 'center_y':.6}
+        spacing: 35
+        padding: 10, 50, 10, 10
+        canvas.before:
+            Color:
+                rgba: 210 / 255, 187 / 255, 255 / 255, 1  
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [30]
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 7
+            Label:
+                text: "Nama"
+                font_size: 15
+                color: "#000000"
+                size_hint_x: 0.3  # Ubah size_hint_x untuk label
+                halign: "left"  
+                text_size: self.size  # Agar teks bisa diatur di dalam ukuran label
+            # Bagian untuk input
+            TextInput:
+                id: name_input  # Tambahkan id untuk akses di Python
+                hint_text: "Nama"
+                height: 30
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                on_text_validate: root.add_datapenduduk()
+        
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 7
+            Label:
+                text: "NIK"
+                font_size: 15
+                color: "#000000"
+                size_hint_x: 0.3  # Ubah size_hint_x untuk label
+                halign: "left"  
+                text_size: self.size  # Agar teks bisa diatur di dalam ukuran label
+            TextInput:
+                id: nik_input  # Tambahkan id untuk akses di Python
+                hint_text: "NIK"
+                height: 30
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                on_text_validate: root.add_datapenduduk()
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 7
+            Label:
+                text: "Password"
+                font_size: 15
+                color: "#000000"
+                size_hint_x: 0.3  # Ubah size_hint_x untuk label
+                halign: "left"  
+                text_size: self.size  # Agar teks bisa diatur di dalam ukuran label
+            TextInput:
+                id: pw_input  # Tambahkan id untuk akses di Python
+                hint_text: "Password"
+                height: 30
+                size_hint_y: None
+                multiline: False
+                font_size: 15
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                on_text_validate: root.add_datapenduduk()
+        
+        Widget:
+            size_hint_x: 0.02
+
+    Button:
+        text: "Simpan"
+        size_hint: None, None
+        height: 43
+        width: 136
+        background_color: 0, 0, 0, 0
+        pos_hint: {'center_x':.5, 'center_y':.35}
+        canvas.before:
+            Color:
+                rgba: 131/255, 102/255, 221/255, 1  # Warna dari tombol (#8366DD)
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]  # Radius lengkungan tombol (ubah sesuai kebutuhan)
+        on_press:
+            root.add_datapenduduk()  # Panggil fungsi di kelas IsiDataPenduduk
